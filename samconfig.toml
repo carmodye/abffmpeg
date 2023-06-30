@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "ab-ffmpeg"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-26q5xlsp73fe"
+s3_prefix = "ab-ffmpeg"
+region = "us-east-1"
+profile = "abcarmody"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
