@@ -1,22 +1,12 @@
-const fs = require('fs');
-
-function getDirectories(path) {
-  return fs.readdirSync(path, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
-}
-
-exports.handler = async event => {
-  // Log the event argument for debugging and for use in local development.
-  console.log(JSON.stringify(event, undefined, 2));
-// Usage Example:
-const directoryPath = '/opt';
-const directories = getDirectories(directoryPath);
-console.log(directories);
-
-    const response = {
+exports.handler = async (event) => {
+  // TODO implement
+  const execSync = require('child_process').execSync;
+  const output = execSync('/opt/ffmpeglib/ffmpeg -h', { encoding: 'utf-8' });  // the default is 'buffer'
+  console.log('Output was:\n', output);
+  
+  const response = {
       statusCode: 200,
-      body: directories,
-    };
-    return response;
+      body: JSON.stringify(output),
   };
+  return response;
+};
