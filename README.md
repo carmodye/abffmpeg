@@ -12,3 +12,11 @@ https://aws.amazon.com/blogs/media/processing-user-generated-content-using-aws-l
 This is javascript one that does process from sam applications does not deploy because of layer issues
 https://github.com/simalexan/s3-lambda-ffmpeg-mov-to-mp4-s3/blob/master/src/index.js
 
+The example.js shows how to read a file into /tmp and run ffmpeg etc.
+
+
+call the service with json file name and commands to run example
+{
+  "cmd": "some commands???",
+  "filename": "sample-mp4-file1.mp4"
+}
