@@ -28,6 +28,14 @@ exports.handler = async (event , context) => {
 //  const output1 = execSync('/opt/ffmpeglib/ffprobe -h', { encoding: 'utf-8' });  
 //  const output = execSync('/opt/ffmpeglib/ffmpeg -h', { encoding: 'utf-8' });  
 
+// pull file
+s3Util.downloadFileFromS3(  process.env.VIDINBUCKET_BUCKET_NAME
+  , JSON.parse(event.body).filename, inputFile);
+
+//  const execSync = require('child_process').execSync;
+//  const output = execSync('ls -l inputFile', { encoding: 'utf-8' });
+
+
 //return s3Util.downloadFileFromS3(inputBucket, key, inputFile)
 //.then(() => childProcessPromise.spawn(
 //  '/opt/bin/ffmpeg',
